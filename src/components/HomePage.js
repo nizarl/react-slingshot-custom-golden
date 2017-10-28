@@ -3,11 +3,10 @@ import { Link } from 'react-router-dom';
 
 const HomePage = () => {
   return (
-    <div>
+    <div className="home-page-top">
   
       <ol>
-        <li>Review the <Link to="/fuel-savings">demo app</Link></li>
-        <li>Remove the demo and start coding: npm run remove-demo</li>
+        <li>Review the <Link to="/fuel-savings">404 page</Link></li>
       </ol>
     </div>
   );

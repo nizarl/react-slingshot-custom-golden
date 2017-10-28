@@ -9,7 +9,7 @@ import initialState from './initialState';
 // Note that I'm using Object.assign to create a copy of current state
 // and update values on the copy.
 export default function clinicalDocsReducer(state = initialState.clinicaldocsProps, action) {
-  let newState;
+  //let newState;
 
   switch (action.type) {
     case CLINICALDOCS_TOGGLE_FUNCTION:
