@@ -15,7 +15,7 @@ export default function clinicalDocsReducer(state = initialState.clinicaldocsPro
     case CLINICALDOCS_TOGGLE_FUNCTION:
       // For this example, just simulating a save by changing date modified.
       // In a real app using Redux, you might use redux-thunk and handle the async call in fuelSavingsActions.js
-      return objectAssign({}, state, {isOpened: !state.isOpened});
+      return {...state, isOpened: !state.isOpened};
 
     default:
       return state;
