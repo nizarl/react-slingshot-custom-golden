@@ -8,7 +8,7 @@ export const CDContainer = (props) => {
 
   return (
     <div className="container-fluid">
-    <ClinicalDocs toggleCollapseComponent={props.actions.toggleCollapseComponent} clinicaldocsProps={props.clinicaldocsProps} />
+    <ClinicalDocs toggleCollapseComponent={props.actions.toggleCollapseComponent} clinicaldocsProps={props.clinicaldocsProps} fuelSavings={props.fuelSavings} />
     </div>
   );
 };
@@ -17,6 +17,7 @@ export const CDContainer = (props) => {
 function mapStateToProps(state) {
   return {
     clinicaldocsProps: state.clinicaldocsProps,
+    fuelSavings: state.fuelSavings
   };
 }
 

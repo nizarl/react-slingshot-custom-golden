@@ -3,8 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Switch, NavLink, Route } from 'react-router-dom';
 import HomePage from './HomePage';
-//import ClinicalDocs from '@ctech/clinicaldocs-component';
-import CD from '../containers/CD';
+import ClinicalDocs from '../containers/ClinicalDocs';
 import NotFoundPage from './NotFoundPage';
 
 // This is a class-based component because the current
@@ -23,7 +22,7 @@ class App extends React.Component {
         </div>
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route path="/clinical" component={CD} />
+          <Route path="/clinical" component={ClinicalDocs} />
           <Route component={NotFoundPage} />
         </Switch>
       </div>
