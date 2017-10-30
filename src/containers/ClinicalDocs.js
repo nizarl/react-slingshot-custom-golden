@@ -16,8 +16,8 @@ export const CDContainer = (props) => {
 
 function mapStateToProps(state) {
   return {
-    clinicaldocsProps: state.clinicaldocsProps,
-    fuelSavings: state.fuelSavings
+
+    clinicaldocsProps: Object.assign({}, state.clinicaldocsProps.components.byId[1])
   };
 }
 

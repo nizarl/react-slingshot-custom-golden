@@ -9,7 +9,6 @@ import Root from './components/Root';
 import './styles/styles.scss'; 
 require('./favicon.ico'); // Tell webpack to load favicon.ico
 import sharedStyles from '@ctech/shared-ui';
-//sharedStyles;
 const store = configureStore();
 
 render(
