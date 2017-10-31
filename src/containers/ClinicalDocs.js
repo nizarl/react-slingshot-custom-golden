@@ -8,16 +8,24 @@ export const CDContainer = (props) => {
 
   return (
     <div className="container-fluid">
-    <ClinicalDocs toggleCollapseComponent={props.actions.toggleCollapseComponent} clinicaldocsProps={props.clinicaldocsProps} fuelSavings={props.fuelSavings} />
+      <ClinicalDocs
+        toggleCollapseComponent={props.actions.toggleCollapseComponent}
+        clinicaldocsProps={props.clinicaldocsProps}/>
     </div>
   );
 };
 
-
 function mapStateToProps(state) {
   return {
-
-    clinicaldocsProps: Object.assign({}, state.clinicaldocsProps.components.byId[1])
+    clinicaldocsProps: {
+      componentInfo:{
+        id: state.clinicaldocsProps.id,
+        name: state.clinicaldocsProps.name,
+        urlPath: state.clinicaldocsProps.urlPath,
+      },
+      clinicaldocsData: state.clinicaldocsProps.clinicaldocsData,
+      isOpened: state.clinicaldocsProps.isOpened
+    }
   };
 }
 
@@ -27,7 +35,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(CDContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(CDContainer);
