@@ -43,14 +43,19 @@ describe('Reducers::ClinicalDocs', () => {
     expect(reducer(getAppState(), action)).toEqual(expected);
   });
 
-  it('should handle FETCH_DATA_SUCCESS', () => {
-
-    const action = { type: ActionTypes.FETCH_DATA_SUCCESS};
-    fetchClinicalDocsData();
-    setTimeout(function() {
-        const expected = getAppState();
-        expect(reducer(getAppState(), action)).toEqual(expected);
-    }, 2000);
-   
+  it('should handle FETCH_DATA_ERROR', () => {
+    const action = { type: ActionTypes.FETCH_DATA_ERROR};
+    const expected = Object.assign(getAppState());
+    expect(reducer(getAppState(), action)).toEqual(expected);
   });
+
+//   it('should handle FETCH_DATA_SUCCESS', () => { 
+//     fetchClinicalDocsData();
+//     let resp = clinicalDocsMockData;
+//     const action = { type: ActionTypes.FETCH_DATA_SUCCESS};
+//     const expected = Object.assign(getAppState());
+//     setTimeout(function() {
+//         expect(reducer(getAppState(), action, resp)).toEqual(expected);     
+//     }, 2000);
+//     });
 });

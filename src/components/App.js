@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Switch, NavLink, Route } from 'react-router-dom';
 import HomePage from './HomePage';
-import ClinicalDocs from '../containers/ClinicalDocs';
+import ClinicalDocs from '../containers/ClinicalDocsPage';
 import NotFoundPage from './NotFoundPage';
 
 // This is a class-based component because the current

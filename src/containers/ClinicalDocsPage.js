@@ -4,7 +4,7 @@ import {bindActionCreators} from 'redux';
 import * as actions from '../actions/clinicalDocsActions';
 import ClinicalDocs from '@ctech/clinicaldocs-component';
 
-class CDContainer extends React.Component {
+export class CDContainer extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -32,6 +32,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 function mapStateToProps(state) {
+  console.log('st',state)
   return {
     clinicaldocsProps: {
       componentInfo:{
