@@ -1,4 +1,5 @@
-import {CLINICALDOCS_TOGGLE_FUNCTION} from '../constants/actionTypes';
+//import {CLINICALDOCS_TOGGLE_FUNCTION} from '../constants/actionTypes';
+import * as types from '../constants/actionTypes';
 import initialState from './initialState';
 
 // IMPORTANT: Note that with Redux, state should NEVER be changed.
@@ -15,12 +16,17 @@ import initialState from './initialState';
 export default function clinicalDocsReducer(state = initialState.components.byId[1], action) {
 
   switch (action.type) {
-
-    case CLINICALDOCS_TOGGLE_FUNCTION:
+    case types.CLINICALDOCS_TOGGLE_FUNCTION:
       return {
         ...state,
         isOpened: !state.isOpened
       };
+    
+    case types.FETCH_DATA_SUCCESS:
+      return {
+        ...state,
+        clinicaldocsData: action.resp
+      }
 
     default:
       return state;

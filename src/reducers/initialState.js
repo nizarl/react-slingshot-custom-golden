@@ -13,7 +13,7 @@ export default {
         name: "clinicaldocs",
         urlPath: "clinicaldocs/",
         isOpened: true,
-        clinicaldocsData: clinicalDocsMockData
+        clinicaldocsData: []//clinicalDocsMockData
       },
       2: {
         id: 2,
