@@ -1,10 +1,10 @@
 import axios from 'axios';
 import 'babel-polyfill';
 
-export function getData(params) {
+export function getData() {
 
   async function get() {
-    let json = await axios.get('../mocks/clinicaldocs.mock.jsonasdasd');
+    let json = await axios.get('../mocks/clinicaldocs.mock.json');
     return json;
   }
 

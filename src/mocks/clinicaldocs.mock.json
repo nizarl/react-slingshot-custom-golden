@@ -1,3 +1,4 @@
+//Note: We do not copy Mock on Prod build.  This file and it's folder are just for development mocking
 [{
     "identifier": "1",
     "type": "Lab Result",

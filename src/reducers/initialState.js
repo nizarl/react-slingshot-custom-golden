@@ -1,4 +1,3 @@
-import clinicalDocsMockData from '../mocks/clinicaldocs.mock';
 import problemsDocsMockData from '../mocks/problems.mock';
 
 // let's try to flatten this structure as much as possible.  This will make
@@ -13,7 +12,7 @@ export default {
         name: "clinicaldocs",
         urlPath: "clinicaldocs/",
         isOpened: true,
-        clinicaldocsData: []//clinicalDocsMockData
+        clinicaldocsData: []
       },
       2: {
         id: 2,
