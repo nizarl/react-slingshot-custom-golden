@@ -30,14 +30,14 @@ export function loadError(resp) {
 export function fetchClinicalDocsData() {
   return (dispatch) => {
     let httpClient = getData();
-  //  let fet = g.get();
 
     httpClient.get().then((resp) => {
       dispatch(loadSuccess(resp.data));
     })
     .catch((err)=>{
+      console.log(err); // eslint-disable-line no-console
       dispatch(loadError(err.response));
-      console.log(err);
+      
     });
   };
 
