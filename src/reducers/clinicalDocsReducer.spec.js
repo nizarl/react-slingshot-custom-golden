@@ -1,43 +1,28 @@
 import * as ActionTypes from '../constants/actionTypes';
 import reducer from './clinicalDocsReducer';
+import clinicalDocsMockData from '../mocks/clinicaldocs.mock';
+import {fetchClinicalDocsData} from '../actions/clinicalDocsActions';
+
 
 describe('Reducers::ClinicalDocs', () => {
 
   const getInitialState = () => {
     return {
-      newMpg: '',
-      tradeMpg: '',
-      newPpg: '',
-      tradePpg: '',
-      milesDriven: '',
-      milesDrivenTimeframe: 'week',
-      displayResults: false,
-      dateModified: null,
-      necessaryDataIsProvidedToCalculateSavings: false,
-      savings: {
-        monthly: 0,
-        annual: 0,
-        threeYear: 0
-      }
+        clinicaldocsData: [],
+        id: 1,
+        isOpened: true,
+        name: "clinicaldocs",
+        urlPath: "clinicaldocs/"
     };
   };
 
   const getAppState = () => {
     return {
-      newMpg: 20,
-      tradeMpg: 10,
-      newPpg: 1.50,
-      tradePpg: 1.50,
-      milesDriven: 100,
-      milesDrivenTimeframe: 'week',
-      displayResults: false,
-      dateModified: null,
-      necessaryDataIsProvidedToCalculateSavings: false,
-      savings: {
-        monthly: 0,
-        annual: 0,
-        threeYear: 0
-      }
+        clinicaldocsData: [clinicalDocsMockData],
+        id: 1,
+        isOpened: true,
+        name: "clinicaldocs",
+        urlPath: "clinicaldocs/"
     };
   };
 
@@ -51,4 +36,21 @@ describe('Reducers::ClinicalDocs', () => {
     expect(reducer(undefined, action)).toEqual(expected);
   });
 
+  it('should handle CLINICALDOCS_TOGGLE_FUNCTION', () => {
+    const action = { type: ActionTypes.CLINICALDOCS_TOGGLE_FUNCTION};
+    const expected = Object.assign(getAppState(), { isOpened:false });
+
+    expect(reducer(getAppState(), action)).toEqual(expected);
+  });
+
+  it('should handle FETCH_DATA_SUCCESS', () => {
+
+    const action = { type: ActionTypes.FETCH_DATA_SUCCESS};
+    fetchClinicalDocsData();
+    setTimeout(function() {
+        const expected = getAppState();
+        expect(reducer(getAppState(), action)).toEqual(expected);
+    }, 2000);
+   
+  });
 });

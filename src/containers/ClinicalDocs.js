@@ -2,10 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as actions from '../actions/clinicalDocsActions';
-//import {fetchClinicalDocsData} from '../actions/clinicalDocsActions';
 import ClinicalDocs from '@ctech/clinicaldocs-component';
-
-
 
 class CDContainer extends React.Component {
   constructor(props) {
@@ -47,9 +44,5 @@ function mapStateToProps(state) {
     }
   };
 }
-
-CDContainer.propTypes = {
-
-};
 
 export default connect(mapStateToProps, mapDispatchToProps)(CDContainer);

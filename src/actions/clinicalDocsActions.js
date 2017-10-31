@@ -36,8 +36,7 @@ export function fetchClinicalDocsData() {
     })
     .catch((err)=>{
       console.log(err); // eslint-disable-line no-console
-      dispatch(loadError(err.response));
-      
+      dispatch(loadError(err));
     });
   };
 

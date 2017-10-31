@@ -21,12 +21,16 @@ export default function clinicalDocsReducer(state = initialState.components.byId
         ...state,
         isOpened: !state.isOpened
       };
-    
+
     case types.FETCH_DATA_SUCCESS:
       return {
         ...state,
         clinicaldocsData: action.resp
-      }
+      };
+
+    case types.FETCH_DATA_ERROR:
+      //You could update state here for failed fetch.  For this example I am just returning state.
+      return state;
 
     default:
       return state;
