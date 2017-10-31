@@ -43,7 +43,8 @@ function configureStoreDev(initialState) {
     applyMiddleware(...middlewares)
     )
   );
-  store.dispatch(fetchClinicalDocsData());
+ 
+  //store.dispatch(fetchClinicalDocsData());
 
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers

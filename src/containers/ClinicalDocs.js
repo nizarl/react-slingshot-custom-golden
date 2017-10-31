@@ -2,18 +2,37 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as actions from '../actions/clinicalDocsActions';
+//import {fetchClinicalDocsData} from '../actions/clinicalDocsActions';
 import ClinicalDocs from '@ctech/clinicaldocs-component';
 
-export const CDContainer = (props) => {
 
-  return (
-    <div className="container-fluid">
+
+class CDContainer extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentWillMount () {
+    this.props.actions.fetchClinicalDocsData();
+
+  }
+
+  render () {
+    return (
+      <div className="container-fluid">
       <ClinicalDocs
-        toggleCollapseComponent={props.actions.toggleCollapseComponent}
-        clinicaldocsProps={props.clinicaldocsProps}/>
+        toggleCollapseComponent={this.props.actions.toggleCollapseComponent}
+        clinicaldocsProps={this.props.clinicaldocsProps}/>
     </div>
-  );
-};
+    );
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(actions, dispatch)
+  };
+}
 
 function mapStateToProps(state) {
   return {
@@ -29,10 +48,8 @@ function mapStateToProps(state) {
   };
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators(actions, dispatch)
-  };
-}
+CDContainer.propTypes = {
+
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(CDContainer);
