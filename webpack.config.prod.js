@@ -60,10 +60,13 @@ export default {
     new webpack.optimize.UglifyJsPlugin({ sourceMap: true }),
 
     new CopyWebpackPlugin([               
-       // { from: 'static' }
-       { from: './static/'},
-       //TODO: remove line below
-       { from: './mocks/*'},
+      
+      //THIS IS IMPORTANT: WE COPY STATIC ASSEST FROM ./src/static to ./dist on production build
+      //.htaccess file is needed for apache setup
+      {from: './src/static/'},
+
+      //TODO: REMOVE LINE BELOW WHEN YOU REMOVE CLINICAL DOCS AND REMOVE ALL MOCK DIRECTORIES AND FILES
+      {from: './src/mocks/', to:'./mocks'}
         ])       
   ],
   module: {
