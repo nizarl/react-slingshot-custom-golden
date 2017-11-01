@@ -1,5 +1,5 @@
 /* eslint-disable import/default */
-/*eslint no-unused-vars: ["error", { "varsIgnorePattern": "needed" }]*/
+/*eslint no-unused-vars: */
 
 import React from 'react';
 import { render } from 'react-dom';
