@@ -15,14 +15,12 @@ export function toggleCollapseComponent(event, id) {
 }
 
 export function loadSuccess(resp) {
-  console.log('it ran3');
   return {
     type: types.FETCH_DATA_SUCCESS,
     resp
   };
 }
 export function loadError(resp) {
-  console.log('it ran2');
   return {
     type: types.FETCH_DATA_ERROR,
     resp
@@ -30,7 +28,6 @@ export function loadError(resp) {
 }
 
 export function fetchClinicalDocsData() {
-  console.log('it ran');
   return (dispatch) => {
     let httpClient = getData();
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import {mount} from 'enzyme';
 import {CDContainer} from './ClinicalDocsPage';
 import ClinicalDocsComponent from '@ctech/clinicaldocs-component';
 import {fetchClinicalDocsData} from '../actions/clinicalDocsActions';
@@ -19,7 +19,7 @@ describe('<CDContainer />', () => {
             },
             isOpened: true
           };
-          const wrapper = shallow( <CDContainer toggleCollapseComponent = {
+          const wrapper = mount(<CDContainer toggleCollapseComponent = {
               actions.toggleCollapseComponent
             }
             actions = {
