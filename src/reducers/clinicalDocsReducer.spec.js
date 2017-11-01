@@ -1,7 +1,7 @@
 import * as ActionTypes from '../constants/actionTypes';
 import reducer from './clinicalDocsReducer';
-import clinicalDocsMockData from '../mocks/clinicaldocs.mock';
-import {fetchClinicalDocsData} from '../actions/clinicalDocsActions';
+import clinicalDocsMockData from '../../mocks/clinicaldocs.mock';
+//import {fetchClinicalDocsData} from '../actions/clinicalDocsActions';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import initialState from '../reducers/initialState';

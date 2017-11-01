@@ -1,5 +1,3 @@
-import problemsDocsMockData from '../mocks/problems.mock';
-
 // let's try to flatten this structure as much as possible.  This will make
 // reducer logic simpler.
 export default {
@@ -19,7 +17,7 @@ export default {
         name: "problems",
         urlPath: "problems/",
         isOpened: true,
-        problemsData: problemsDocsMockData
+        problemsData: []
       }
     },
     allIds: [1, 2]

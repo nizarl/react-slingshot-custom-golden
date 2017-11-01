@@ -10,7 +10,7 @@ describe('<CDContainer />', () => {
             toggleCollapseComponent: () => {},
             fetchClinicalDocsData: fetchClinicalDocsData
           };
-          const fuelSavings = {
+          const tempProps = {
             clinicaldocsData: [],
             componentInfo: {
               id: 1,
@@ -26,7 +26,7 @@ describe('<CDContainer />', () => {
               actions
             }
             clinicaldocsProps = {
-              fuelSavings
+              tempProps
             }
             />);
 

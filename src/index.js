@@ -1,5 +1,5 @@
 /* eslint-disable import/default */
-/*eslint no-unused-vars: ["error", { "varsIgnorePattern": "shared" }]*/
+/*eslint no-unused-vars: ["error", { "varsIgnorePattern": "needed" }]*/
 
 import React from 'react';
 import { render } from 'react-dom';
@@ -8,7 +8,7 @@ import configureStore, { history } from './store/configureStore';
 import Root from './components/Root';
 import './styles/styles.scss'; 
 require('./favicon.ico'); // Tell webpack to load favicon.ico
-import sharedStyles from '@ctech/shared-ui';
+import neededStyles from '@ctech/shared-ui';
 const store = configureStore();
 
 render(

@@ -6,7 +6,7 @@ const HomePage = () => {
     <div className="home-page-top">
   
       <ol>
-        <li>Review the <Link to="/fuel-savings">404 page</Link></li>
+        <li>Review the <Link to="/somefail">404 page</Link></li>
       </ol>
     </div>
   );

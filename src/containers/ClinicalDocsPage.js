@@ -32,7 +32,6 @@ function mapDispatchToProps(dispatch) {
 }
 
 function mapStateToProps(state) {
-  console.log('st',state)
   return {
     clinicaldocsProps: {
       componentInfo:{
