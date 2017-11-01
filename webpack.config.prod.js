@@ -62,7 +62,7 @@ export default {
     new CopyWebpackPlugin([               
        // { from: 'static' }
        { from: './static/'},
-       //TODO: remove line below after dev 
+       //TODO: remove line below
        { from: './mocks/*'},
         ])       
   ],

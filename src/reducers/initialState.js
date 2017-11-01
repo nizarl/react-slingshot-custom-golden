@@ -1,8 +1,5 @@
-// let's try to flatten this structure as much as possible.  This will make
-// reducer logic simpler.
+// let's try to keep this structure flat as much as possible.  This will make reducer logic simpler.
 export default {
-  // TODO: remove nested objects, update reducer, then in mapToState assemble for
-  // component API
   components: {
     byId: {
       1: {
