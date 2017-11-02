@@ -5,7 +5,6 @@ import * as actions from '../actions/clinicalDocsActions';
 import ClinicalDocs from '@ctech/clinicaldocs-component';
 import {BASE_URL} from '../utils/path.service';
 import config from '../project.properties';
-
 export class CDContainer extends React.Component {
   constructor(props) {
     super(props);
@@ -14,7 +13,8 @@ export class CDContainer extends React.Component {
   componentWillMount () {
     let baseUrl = BASE_URL;
     let clinicaldocsConfig = config.componentInfo.clinicaldocs;
-    this.props.actions.fetchClinicalDocsData(baseUrl + clinicaldocsConfig.mock); //this.props.patientId.  It is passed in App.js <Route .../>
+    //this.props.patientId is available.  It is passed in by App.js <Route .../>
+    this.props.actions.fetchClinicalDocsData(baseUrl + clinicaldocsConfig.mock); 
   }
 
   render () {

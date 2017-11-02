@@ -12,7 +12,6 @@ import {patientData} from '../utils/patientdata.service';
 // version of hot reloading won't hot reload a stateless
 // component at the top-level.
     
-
 class App extends React.Component {
   constructor(props) {
     super(props);
