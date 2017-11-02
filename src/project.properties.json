@@ -1,11 +1,6 @@
 {
-    "errorMessages": {
-        "noDataAvailable": {
-            "segment1": "There are no records",
-            "segment2": "found for this patient."
-        },
-        "restAPIError": "The System is experiencing difficulties loading patient's record, please try again later or contact support."
-    },
+    "appName": "carepro",
+    "appVersion": "1.0",
     "businessServiceBaseUrls": {
         "domains": {
             "localhost": [
@@ -23,7 +18,7 @@
         },
 
         "localhost": {
-            "careProAPI": "http://localhost:2500/mocks/"
+            "careProAPI": "http://localhost:4000/mocks/"
         },
         "int": {
             "careProAPI": "https://carepro-app-int.chenmed.local/CareProService/carepro/"
@@ -74,5 +69,12 @@
             "urlPath": "orderSummary/"
         }
     },
-    "defaultPatientId": "26669"
+    "defaultTestPatientId": "26669",
+    "errorMessages": {
+        "noDataAvailable": {
+            "segment1": "There are no records",
+            "segment2": "found for this patient."
+        },
+        "restAPIError": "The System is experiencing difficulties loading patient's record, please try again later or contact support."
+    }
 }

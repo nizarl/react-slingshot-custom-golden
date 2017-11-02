@@ -1,6 +1,7 @@
 import config from '../project.properties';
 import _ from 'underscore';
 
+//The browser will always resolve window.location.hostname.  However, we supply localhost for Unit test purposes only.
 const hostname = (window && window.location && window.location.hostname) || "localhost";
 let domains = config.businessServiceBaseUrls.domains;
 

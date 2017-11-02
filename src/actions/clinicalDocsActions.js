@@ -1,5 +1,5 @@
 import * as types from '../constants/actionTypes';
-import {getData} from '../utils/http.client';
+import {getData} from '../utils/http.service';
 
 
 // example of a thunk using the redux-thunk middleware
