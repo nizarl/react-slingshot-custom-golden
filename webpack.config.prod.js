@@ -7,12 +7,18 @@ import WebpackMd5Hash from 'webpack-md5-hash';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'path';
 
+let options = {
+  locales: ['en']  
+};
+
+
 const GLOBALS = {
   'process.env.NODE_ENV': JSON.stringify('production'),
   __DEV__: false
 };
 
 export default {
+  
   resolve: {
     extensions: ['*', '.js', '.jsx', '.json']
   },
@@ -25,6 +31,12 @@ export default {
     filename: '[name].[chunkhash].js'
   },
   plugins: [
+    //Only include EN locale for moment.  Saves approx 200KB from Production main js file!!
+    new webpack.ContextReplacementPlugin(
+      /moment[/\\]locale$/,
+      new RegExp(`^\\.\\/(${options.locales.join('|')})$`)
+    ),
+   
     // Hash the files using MD5 so that their names change when the content changes.
     new WebpackMd5Hash(),
 
