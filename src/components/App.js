@@ -40,7 +40,7 @@ class App extends React.Component {
         </div>
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route path="/clinical" render={()=><ClinicalDocs patientId={this.state.patientId}/>}/>
+          <Route path="/clinical" render={()=><ClinicalDocs patientId={this.state.patientId}/>} />
           <Route component={NotFoundPage} />
         </Switch>
       </div>
