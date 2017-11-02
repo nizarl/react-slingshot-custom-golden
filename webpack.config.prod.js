@@ -31,7 +31,7 @@ export default {
     filename: '[name].[chunkhash].js'
   },
   plugins: [
-    //Only include EN locale for moment.  Saves approx 200KB from Production main js file!!
+    //Only include EN locale for Moment.JS.  Saves approx 200KB from Production main.js file!!
     new webpack.ContextReplacementPlugin(
       /moment[/\\]locale$/,
       new RegExp(`^\\.\\/(${options.locales.join('|')})$`)
