@@ -3,6 +3,8 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as actions from '../actions/clinicalDocsActions';
 import ClinicalDocs from '@ctech/clinicaldocs-component';
+import {BASE_URL} from '../utils/path.service';
+import config from '../project.properties';
 
 export class CDContainer extends React.Component {
   constructor(props) {
@@ -10,7 +12,9 @@ export class CDContainer extends React.Component {
   }
 
   componentWillMount () {
-    this.props.actions.fetchClinicalDocsData();
+    let baseUrl = BASE_URL;
+    let clinicaldocsConfig = config.componentInfo.clinicaldocs;
+    this.props.actions.fetchClinicalDocsData(baseUrl + clinicaldocsConfig.mock );
 
   }
 

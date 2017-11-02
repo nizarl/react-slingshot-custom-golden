@@ -12,34 +12,35 @@
                 "localhost"
             ],
             "int": [
-                "patientsummary-int.chenmed.local"
+                "carepro-int.chenmed.local"
             ],
             "qa": [
-                "patientsummary-qa.chenmed.local"
+                "carepro-qa.chenmed.local"
             ],
             "production": [
-                "patientsummary.chenmed.com"
+                "carepro.chenmed.com"
             ]
         },
 
         "localhost": {
-            "patSumAPI": "https://patientsummary-app-int.chenmed.local/PatientSummaryService/patientSummary/"
+            "careProAPI": "http://localhost:2500/mocks/"
         },
         "int": {
-            "patSumAPI": "https://patientsummary-app-int.chenmed.local/PatientSummaryService/patientSummary/"
+            "careProAPI": "https://carepro-app-int.chenmed.local/CareProService/carepro/"
         },
         "qa": {
-            "patSumAPI": "https://patientsummary-app-qa.chenmed.local/PatientSummaryService/patientSummary/"
+            "careProAPI": "https://carepro-app-qa.chenmed.local/CareProService/carepro/"
         },
         "production": {
-            "patSumAPI": "https://patientsummary.chenmed.com/PatientSummaryService/patientSummary/"
+            "careProAPI": "https://carepro.chenmed.com/CareProService/carepro/"
         }
     },
     "componentInfo": {
-        "orders": {
-            "id" : 1,
-            "name": "orders",
-            "urlPath": "orderSummary/"
+        "clinicaldocs": {
+            "id" : 7,
+            "name": "clinicaldocs",
+            "urlPath": "clinical/",
+            "mock": "clinicaldocs.mock.json"
         },
         "patientinfo": {
             "id" : 2,
@@ -67,10 +68,10 @@
             "name": "labs",
             "urlPath": "diagnosticreports/"
         },
-        "clinicaldocs": {
+        "orders": {
             "id" : 7,
-            "name": "clinicaldocs",
-            "urlPath": "clinicaldocs/"
+            "name": "orders",
+            "urlPath": "orderSummary/"
         }
     },
     "defaultPatientId": "26669"

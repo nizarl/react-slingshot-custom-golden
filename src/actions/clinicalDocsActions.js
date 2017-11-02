@@ -26,11 +26,11 @@ export function loadError(resp) {
   };
 }
 
-export function fetchClinicalDocsData() {
+export function fetchClinicalDocsData(url) {
   return (dispatch) => {
     let httpClient = getData();
 
-    httpClient.get().then((resp) => {
+    httpClient.get(url).then((resp) => {
       dispatch(loadSuccess(resp.data));
     })
     .catch((err)=>{

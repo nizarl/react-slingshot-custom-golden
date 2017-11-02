@@ -3,13 +3,13 @@ import 'babel-polyfill';
 
 export function getData() {
 
-  async function get() {
-    let json = await axios.get('../mocks/clinicaldocs.mock.json');
+  async function get(url) {
+    let json = await axios.get(url);
     return json;
   }
 
-  async function post(postData) {
-    let json = await axios.post('../mocks/clinicaldocs.mock.json', {
+  async function post(url,postData) {
+    let json = await axios.post(url, {
       postBody: postData
     });
     return json;
