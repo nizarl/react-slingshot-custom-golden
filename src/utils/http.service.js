@@ -9,7 +9,11 @@ export function getData() {
   }
 
   async function post(url,postData) {
+    
     let json = await axios.post(url, {
+      headers: {
+        'Content-Type': 'application/json'
+    },
       postBody: postData
     });
     return json;

@@ -33,7 +33,10 @@ class App extends React.Component {
     const activeStyle = { color: 'red' };
     return (
       <div>
-        <div className="carepro-navbar"> 
+        <div className="patientinfo-banner">
+          <div>Patient Info Banner Placeholder</div>
+          </div> 
+        <div className="carepro-navbar">
           <NavLink exact to="/" activeStyle={activeStyle}>Home</NavLink>
           {' | '}
           <NavLink to="/clinical" activeStyle={activeStyle}>Clinical</NavLink>
