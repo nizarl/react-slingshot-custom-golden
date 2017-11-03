@@ -4,7 +4,7 @@ import config from '../project.properties';
 const hostname = (window && window.location && window.location.hostname) || "localhost";
 
 let envKey;
-let domains = config.businessServiceBaseUrls.domains;
+const domains = config.businessServiceBaseUrls.domains;
 
 for (let [key, value] of Object.entries(domains)) { 
     if(value[0]===hostname){
@@ -16,6 +16,6 @@ if(!envKey){
     throw new Error("Business service URL not found. Check project.properties.json file for correct config values.");
 }
 
-let apiUrl = config.businessServiceBaseUrls[envKey].careProAPI;
+const apiUrl = config.businessServiceBaseUrls[envKey].careProAPI;
 
 export const BASE_URL = apiUrl;

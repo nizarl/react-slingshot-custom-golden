@@ -10,14 +10,12 @@ export function appInfo() {
   }
 
   function get() {
-    let appName = cookies.get('appName');
-    let appVersion = cookies.get('appVersion');
+    const appName = cookies.get('appName');
+    const appVersion = cookies.get('appVersion');
     return {
       appName: appName,
       appVersion: appVersion
     };
-
-
   }
 
   return {

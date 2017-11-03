@@ -77,7 +77,8 @@ export default {
       //.htaccess file is needed for apache setup
       {from: './src/static/'},
 
-      //TODO: REMOVE LINE BELOW WHEN YOU REMOVE CLINICAL DOCS AND REMOVE ALL MOCK DIRECTORIES AND FILES
+      //TODO: REMOVE LINE BELOW WHEN YOU REMOVE CLINICAL DOCS 
+      //TODO: IN ADDITION, REMOVE ALL MOCK DIRECTORIES AND FILES FROM THE PROJECT
       {from: './src/mocks/', to:'./mocks'}
         ])       
   ],

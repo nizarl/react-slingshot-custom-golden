@@ -12,8 +12,8 @@ export function patientData() {
     const parsed = queryString.parse(location.search);
     const patientIdFromUrl = parsed.patientId;
 
-    let ssoPatId = cookies.get('patientId');
-    let ssoAT = cookies.get('at');
+    const ssoPatId = cookies.get('patientId');
+    const ssoAT = cookies.get('at');
 
     //Check for patientId in URL (this takes precedence while in test). We are using this for now for backward compatibility.
     if ((patientIdFromUrl)) {
@@ -33,7 +33,7 @@ export function patientData() {
   }
 
   function get() {
-    let patientIdFromCookieStore =  cookies.get('patientId');
+    const patientIdFromCookieStore =  cookies.get('patientId');
     return patientIdFromCookieStore;
 
 
