@@ -7,7 +7,9 @@ import { AppContainer } from 'react-hot-loader';
 import configureStore, { history } from './store/configureStore';
 import Root from './components/Root';
 import './styles/styles.scss'; 
-import '../node_modules/@ctech/clinicaldocs-component/es/ClinicalDocs.scss';
+//Tradeoff: Had to include component scss file below since we are doing component lazy load on route.
+//If we didn't lazy load the import below would not be necessary.
+import '../node_modules/@ctech/clinicaldocs-component/es/ClinicalDocs.scss'; 
 require('./favicon.ico'); // Tell webpack to load favicon.ico
 import neededStyles from '@ctech/shared-ui';
 const store = configureStore();

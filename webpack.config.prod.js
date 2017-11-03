@@ -7,7 +7,7 @@ import WebpackMd5Hash from 'webpack-md5-hash';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'path';
 
-let options = {
+const options = {
   locales: ['en']  
 };
 
