@@ -78,7 +78,7 @@ export default {
       {from: './src/static/'},
 
       //TODO: REMOVE LINE BELOW WHEN YOU REMOVE CLINICAL DOCS 
-      //TODO: IN ADDITION, REMOVE ALL MOCK DIRECTORIES AND FILES FROM THE PROJECT
+      //TODO: REMOVE ALL MOCK DIRECTORIES AND FILES FROM THE PROJECT
       {from: './src/mocks/', to:'./mocks'}
         ])       
   ],

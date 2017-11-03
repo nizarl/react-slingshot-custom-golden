@@ -28,7 +28,7 @@ export function loadError(resp) {
 
 export function fetchClinicalDocsData(url) {
   return (dispatch) => {
-    let httpClient = getData();
+    const httpClient = getData();
 
     httpClient.get(url).then((resp) => {
       dispatch(loadSuccess(resp.data));

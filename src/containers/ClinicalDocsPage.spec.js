@@ -7,7 +7,7 @@ import {fetchClinicalDocsData} from '../actions/clinicalDocsActions';
 describe('<CDContainer />', () => {
       it('should contain <ClinicalDocsComponent />', () => {
           const actions = {
-            toggleCollapseComponent: () => {},
+            toggleCollapseComponent: () => {return true;},
             fetchClinicalDocsData: fetchClinicalDocsData
           };
           const tempProps = {
