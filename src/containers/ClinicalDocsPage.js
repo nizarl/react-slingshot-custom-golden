@@ -14,7 +14,7 @@ export class CDContainer extends React.Component {
     let baseUrl = BASE_URL;
     let clinicaldocsConfig = config.componentInfo.clinicaldocs;
     //this.props.patientId is available.  It is passed in by App.js <Route .../>
-    this.props.actions.fetchClinicalDocsData(baseUrl + clinicaldocsConfig.mock); 
+    this.props.actions.fetchClinicalDocsData(baseUrl + 'mocks/' + clinicaldocsConfig.mock); 
   }
 
   render () {

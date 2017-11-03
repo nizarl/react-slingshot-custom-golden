@@ -18,10 +18,10 @@
         },
 
         "localhost": {
-            "careProAPI": "http://localhost:4000/mocks/"
+            "careProAPI": "http://localhost:4000/"
         },
         "int": {
-            "careProAPI": "https://carepro-app-int.chenmed.local/CareProService/carepro/"
+            "careProAPI": "https://carepro-int.chenmed.local/"
         },
         "qa": {
             "careProAPI": "https://carepro-app-qa.chenmed.local/CareProService/carepro/"
