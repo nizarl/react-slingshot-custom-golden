@@ -1,3 +1,6 @@
+ Note: Make sure you have installed facebook watchman on your machine:
+ https://facebook.github.io/watchman/
+
 
  All source code is placed under /src. Tests are placed alongside the file under test. The final built app is placed under /dist. These are the files you run in production.
 
