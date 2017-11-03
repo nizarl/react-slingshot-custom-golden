@@ -1,4 +1,4 @@
- Note: Make sure you have installed facebook watchman on your machine:
+ **Note: Make sure you have installed facebook watchman on your machine:**
  https://facebook.github.io/watchman/
 
 
