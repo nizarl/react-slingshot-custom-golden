@@ -2,9 +2,9 @@
  https://facebook.github.io/watchman/
 
 
- Directory Structure Info:All source code is placed under /src. Tests are placed alongside the file under test. The final built app is placed under /dist. These are the files you run in production.
+ Directory Structure Info: All source code is placed under /src. Tests are placed alongside the file under test. The final built app is placed under /dist. These are the files you run in production.
 
- Unit Tests: We have Jest and Enzyme available for testing.
+ Unit Tests: We use Jest and Enzyme for testing.
 
 | **Script** | **Description** |
 |----------|-------|

@@ -8,7 +8,7 @@ import Root from './components/Root';
 import './styles/styles.scss';
 /**
   * We are doing component lazy load on route in App.js. 
-  * Therefore, we import component scss file below.
+  * Therefore, we import component SCSS file below.
   * If we did not lazy load the component import below would not be necessary.
 */
 import '../node_modules/@ctech/clinicaldocs-component/es/ClinicalDocs.scss';
@@ -22,9 +22,7 @@ render(
 </AppContainer>, document.getElementById('app'));
 
 if (module.hot) {
-  module
-    .hot
-    .accept('./components/Root', () => {
+  module.hot.accept('./components/Root', () => {
       const NewRoot = require('./components/Root').default;
       render(
         <AppContainer>
