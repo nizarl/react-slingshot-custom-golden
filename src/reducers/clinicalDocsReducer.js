@@ -2,10 +2,12 @@ import * as types from '../constants/actionTypes';
 import initialState from './initialState';
 
 /*
-* IMPORTANT: In Redux, state should only be changed by Reducers.
-* Reducer should be pure function and should apply immutable techiques for state change.
-* State is considered immutable. (Object.assign and spread operator can be used to ensure immutability.)
-
+* Redux state should only be changed by Reducers only.
+* The concept of a reducer is that it takes the current state and an action and it returns the next state. 
+* It's a pure function that does not modify the current state.
+* State is considered immutable. (Object.assign and spread operator should be used to ensure immutability.)
+*
+*
 * To access entire state object just you could do the following.
 * export default function clinicalDocsReducer(state = initialState, action = action) {
 

@@ -32,15 +32,17 @@
     },
     "componentInfo": {
         "clinicaldocs": {
-            "id" : 7,
+            "id" : 1,
             "name": "clinicaldocs",
-            "urlPath": "clinical/",
-            "mockFile": "clinicaldocs.mock.json"
+            "urlPath": "mocks/",
+            "isOpened": true,
+            "mockFile": "clinicaldocs.mock.json",
+            "clinicaldocsData": []
         },
         "patientinfo": {
             "id" : 2,
             "name": "patientinfo",
-            "urlPath": "patientInfo//"
+            "urlPath": "patientInfo/"
         },
         "allergies": {
             "id" : 3

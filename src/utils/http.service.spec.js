@@ -1,7 +1,7 @@
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import {
-  getData
+  init
 } from './http.service';
 import 'babel-polyfill';
 
@@ -9,7 +9,7 @@ describe('Http service', () => {
   let httpClient, data, mock;
 
   beforeEach(() => {
-    httpClient = getData();
+    httpClient = init();
     mock = new MockAdapter(axios);
     data = {
       response: true,

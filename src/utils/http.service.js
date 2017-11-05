@@ -1,8 +1,7 @@
 import axios from 'axios';
 import 'babel-polyfill';
 
-export function getData() {
-
+export function init() {
   async function get(url) {
     const json = await axios.get(url);
     return json;

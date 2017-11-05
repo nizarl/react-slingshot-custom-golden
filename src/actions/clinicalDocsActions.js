@@ -1,17 +1,15 @@
 import * as types from '../constants/actionTypes';
-import {getData} from '../utils/http.service';
+import {init} from '../utils/http.service';
+
+/*
+ * We use the redux-thunk middleware library for async actions.  Thunk defers work for later (Async).
+ * Thunk bindings are created in configureStore.js file. (see: createStore(){...})
+ * Thunk allows you to write action creators that return a function instead of an action. 
+ * The inner function can receive the store methods .dispatch() and .getState() as parameters.
+ * Futher reading: https://github.com/gaearon/redux-thunk
+ */
 
 
-// example of a thunk using the redux-thunk middleware
-export function toggleCollapseComponent(event, id) {
-  return function (dispatch) {
-    // thunk
-    return dispatch({
-      type: types.CLINICALDOCS_TOGGLE_FUNCTION,
-      id
-    });
-  };
-}
 
 export function loadSuccess(resp) {
   return {
@@ -26,10 +24,20 @@ export function loadError(resp) {
   };
 }
 
+// example of a thunk using the redux-thunk middleware
+export function toggleCollapseComponent(event, id) {
+  return function (dispatch) { 
+    return dispatch({
+      type: types.CLINICALDOCS_TOGGLE_FUNCTION,
+      id
+    });
+  };
+}
+
+// example of a thunk using the redux-thunk middleware
 export function fetchClinicalDocsData(url) {
   return (dispatch) => {
-    const httpClient = getData();
-
+    const httpClient = init();
     httpClient.get(url).then((resp) => {
       dispatch(loadSuccess(resp.data));
     })
@@ -38,5 +46,4 @@ export function fetchClinicalDocsData(url) {
       dispatch(loadError(err));
     });
   };
-
 }

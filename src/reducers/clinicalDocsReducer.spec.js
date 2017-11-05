@@ -10,7 +10,7 @@ describe('Reducers::ClinicalDocs', () => {
         id: 1,
         isOpened: true,
         name: "clinicaldocs",
-        urlPath: "clinicaldocs/"
+        urlPath: "mocks/"
     };
   };
 
@@ -20,7 +20,7 @@ describe('Reducers::ClinicalDocs', () => {
         id: 1,
         isOpened: true,
         name: "clinicaldocs",
-        urlPath: "clinicaldocs/"
+        urlPath: "mocks/"
     };
   };
 

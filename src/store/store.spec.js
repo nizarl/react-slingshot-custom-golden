@@ -18,7 +18,7 @@ describe('Store', () => {
       id: 1,
       isOpened: false,
       name: "clinicaldocs",
-      urlPath: "clinicaldocs/"
+      urlPath: "mocks/"
     };
 
     expect(actual.clinicaldocsProps).toEqual(expected);
