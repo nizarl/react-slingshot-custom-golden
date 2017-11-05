@@ -2,16 +2,13 @@ import * as types from '../constants/actionTypes';
 import initialState from './initialState';
 
 /*
-// IMPORTANT: Note that with Redux, state should NEVER be changed.
-// State is considered immutable. Instead,
-// create a copy of the state passed and set new values on the copy.
-// Note: I'm using the ES6 spread operator to ensure immutability. It makes a shallow clone.
+* IMPORTANT: In Redux, state should only be changed by Reducers.
+* State is considered immutable. (Object.assign and spread operator can be used to ensure immutability.)
 
-// You could do the following if you need access to further areas of state:
-// export default function clinicalDocsReducer(state = initialState, action) {
+* To access entire state object just you could do the following.
+* export default function clinicalDocsReducer(state = initialState, action) {
 
-// For example: to make this function reusable by many components make state=initialState,
-// and use the component id to update state to any component that is collapsable
+* --------------- Example ClinicalDocs Reducer: ------------
 */
 export default function clinicalDocsReducer(state = initialState.components.byId[1], action = action) {
 
@@ -29,7 +26,7 @@ export default function clinicalDocsReducer(state = initialState.components.byId
       };
 
     case types.FETCH_DATA_ERROR:
-      //You could update state here for failed fetch.  For this example I am just returning state.
+      //You could update state here for failed fetch.  In this example just return state.
       return state;
 
     default:

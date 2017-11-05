@@ -2,9 +2,15 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as actions from '../actions/clinicalDocsActions';
-import ClinicalDocs from '@ctech/clinicaldocs-component';
-import {BASE_URL} from '../utils/path.service';
 import config from '../project.properties';
+import {BASE_URL} from '../utils/path.service';
+import ClinicalDocs from '@ctech/clinicaldocs-component';
+
+/**
+ * This is a Container component.  
+ * It has access to Redux state and uses mapStateToProps to map Redux state to Child component props.
+ * It has access to Actions and uses mapDispatchToProps to map Actions to Child component props.
+ */
 export class CDContainer extends React.Component {
   constructor(props) {
     super(props);
@@ -13,14 +19,14 @@ export class CDContainer extends React.Component {
   componentWillMount () {
     const baseUrl = BASE_URL;
     const clinicaldocsConfig = config.componentInfo.clinicaldocs;
-    //this.props.patientId is available.  It is passed in by App.js <Route .../>
-    this.props.actions.fetchClinicalDocsData(baseUrl + 'mocks/' + clinicaldocsConfig.mock); 
+    this.props.actions.fetchClinicalDocsData(baseUrl + 'mocks/' + clinicaldocsConfig.mockFile); 
   }
 
   render () {
     return (
       <div className="container-fluid">
       <ClinicalDocs
+        //{this.props.patientId} is available.  It is passed in to CDContainer by App.js <Route .../>
         toggleCollapseComponent={this.props.actions.toggleCollapseComponent}
         clinicaldocsProps={this.props.clinicaldocsProps}/>
     </div>

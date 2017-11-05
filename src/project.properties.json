@@ -35,7 +35,7 @@
             "id" : 7,
             "name": "clinicaldocs",
             "urlPath": "clinical/",
-            "mock": "clinicaldocs.mock.json"
+            "mockFile": "clinicaldocs.mock.json"
         },
         "patientinfo": {
             "id" : 2,

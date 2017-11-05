@@ -5,32 +5,33 @@ import { Switch, NavLink, Route } from 'react-router-dom';
 import HomePage from './HomePage';
 import NotFoundPage from './NotFoundPage';
 import {appInfo} from '../utils/appinfo.service';
-import {patientData} from '../utils/patientdata.service';
+import {patientData} from '../utils/patient.service';
 import Loadable from 'react-loadable';
 import LoadingComponent from '../components/LoadingComponent';
 
-
-// This is a class-based component because the current
-// version of hot reloading won't hot reload a stateless
-// component at the top-level.
 const AsyncClinicalDocsContainer = Loadable({
   loader: () => import("../containers/ClinicalDocsPage"),
   loading: LoadingComponent
 });
 
+/**
+* This is a class-based component because the current
+* version of hot reloading won't hot reload a stateless
+* component at the top-level.
+*/
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.appSettings().set();
-    this.patientSettings().set();
-    this.state = {patientId: this.patientSettings().get()}; 
+    this.appInfo().set();
+    this.patient().set();
+    this.state = {patientId: this.patient().get()}; 
   }
 
-  appSettings() {
+  appInfo() {
     return appInfo();
   }
 
-  patientSettings() {
+  patient() {
     return patientData();
   }
 

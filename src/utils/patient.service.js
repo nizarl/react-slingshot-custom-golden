@@ -1,5 +1,8 @@
-//NOTE: //SSO uses cookiestore
-//We do not want to store state in 2 place (i.e. cookiestore and redux) so we use cookiestore
+/**
+ * 
+ * SSO uses cookiestore for AT and patientId.
+ * We do not want to store state in 2 places (i.e. cookiestore and Redux) so we use also cookiestore to AT and patientId
+ */
 
 import Cookies from 'universal-cookie';
 import config from '../project.properties';
@@ -15,12 +18,13 @@ export function patientData() {
     const ssoPatId = cookies.get('patientId');
     const ssoAT = cookies.get('at');
 
-    //Check for patientId in URL (this takes precedence while in test). We are using this for now for backward compatibility.
+    //Check for patientId in URL (this takes precedence while in test). This should be removed when going to Prod.
     if ((patientIdFromUrl)) {
       cookies.set('patientId', patientIdFromUrl);
     }
 
-    // //check for patientId and authentication token in cookie store from Referer: cookie data set by referer no need to set in aggregator;
+    //Check for patientId and SSO authentication token in cookiestore.
+    //Cookies (key/values) are set in cookiestore by Referring Application.
     else if (ssoPatId && ssoAT) {
       return true;
     }
@@ -29,14 +33,11 @@ export function patientData() {
     else {
       cookies.set('patientId', config.defaultTestPatientId);
     }
-
   }
 
   function get() {
     const patientIdFromCookieStore =  cookies.get('patientId');
     return patientIdFromCookieStore;
-
-
   }
 
   return {

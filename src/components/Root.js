@@ -8,6 +8,11 @@ export default class Root extends Component {
   render() {
     const { store, history } = this.props;
     return (
+      /**
+       * In this file we wrap the main App component inside the Redux store and Router information.
+       * This makes store and route info available to the application as Redux state object.
+       */
+      
       <Provider store={store}>
         <ConnectedRouter history={history}>
           <App />

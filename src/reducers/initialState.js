@@ -1,4 +1,9 @@
-// let's try to keep this structure flat as much as possible.  This will make reducer logic simpler.
+/**
+ * Redux is intended to be a predictable state container. l
+ * We store application state as needed into a single state seen below.
+ * State is changed by Reducers only. Never directory by components. 
+ * Let's try to keep this structure flat as much as possible.  This will make Reducer logic simpler.
+ */
 export default {
   components: {
     byId: {
