@@ -24,7 +24,7 @@ export function loadError(resp) {
   };
 }
 
-// example of a thunk using the redux-thunk middleware
+// example of a redux-thunk
 export function toggleCollapseComponent(event, id) {
   return function (dispatch) { 
     return dispatch({
@@ -34,7 +34,7 @@ export function toggleCollapseComponent(event, id) {
   };
 }
 
-// example of a thunk using the redux-thunk middleware
+// example of a redux-thunk
 export function fetchClinicalDocsData(url) {
   return (dispatch) => {
     const httpClient = init();
