@@ -4,11 +4,14 @@ import PropTypes from 'prop-types';
 import { Switch, NavLink, Route } from 'react-router-dom';
 import HomePage from './HomePage';
 import NotFoundPage from './NotFoundPage';
-import {appInfo} from '../utils/appinfo.service';
-import {patientData} from '../utils/patient.service';
+import {setAppInfo} from '../utils/appinfo.service';
+import {setPatientData, getPatientData} from '../utils/patient.service';
 import Loadable from 'react-loadable';
 import LoadingComponent from '../components/LoadingComponent';
 
+/**
+ * Loadable uses react-loadable: https://github.com/thejameskyle/react-loadable
+ */
 const AsyncClinicalDocsContainer = Loadable({
   loader: () => import("../containers/ClinicalDocsPage"),
   loading: LoadingComponent
@@ -22,19 +25,11 @@ const AsyncClinicalDocsContainer = Loadable({
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.appInfo().set();
-    this.patient().set();
-    this.state = {patientId: this.patient().get()}; 
+    setAppInfo();
+    setPatientData();
+    this.state = {patientId: getPatientData()}; 
   }
-
-  appInfo() {
-    return appInfo();
-  }
-
-  patient() {
-    return patientData();
-  }
-
+  
   render() {
     const activeStyle = { color: 'red' };
     return (

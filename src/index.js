@@ -7,13 +7,14 @@ import configureStore, {history} from './store/configureStore';
 import Root from './components/Root';
 import './styles/styles.scss';
 /**
-  * We are doing component lazy load on route in App.js. 
-  * Therefore, we import component SCSS file below.
-  * If we did not lazy load the component import below would not be necessary.
+  * We are doing component lazy load on route in App.js file. 
+  * Therefore, we import component SCSS file below in first file of the application.
+  * If we did not lazy load the component, the import below would not be necessary.
 */
-import '../node_modules/@ctech/clinicaldocs-component/es/ClinicalDocs.scss';
 require('./favicon.ico'); // Tell webpack to load favicon.ico
-import neededStyles from '@ctech/shared-ui';
+import '../node_modules/@ctech/clinicaldocs-component/es/ClinicalDocs.scss';
+import sharedStylesCtech from '@ctech/shared-ui';
+
 const store = configureStore();
 
 render(

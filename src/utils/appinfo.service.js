@@ -2,24 +2,17 @@ import Cookies from 'universal-cookie';
 import config from '../project.properties';
 const cookies = new Cookies();
 
-export function appInfo() {
+export function setAppInfo() {
+  cookies.set('appName', config.appName);
+  cookies.set('appVersion', config.appVersion);
+}
 
-  function set() {
-    cookies.set('appName', config.appName);
-    cookies.set('appVersion', config.appVersion);
-  }
-
-  function get() {
-    const appName = cookies.get('appName');
-    const appVersion = cookies.get('appVersion');
-    return {
-      appName: appName,
-      appVersion: appVersion
-    };
-  }
-
+export function getAppInfo() {
+  const appName = cookies.get('appName');
+  const appVersion = cookies.get('appVersion');
   return {
-    get: get,
-    set: set
+    appName: appName,
+    appVersion: appVersion
   };
 }
+
