@@ -8,7 +8,6 @@ export function init() {
   }
 
   async function post(url,postData) {
-    
     const json = await axios.post(url, {
       headers: {
         'Content-Type': 'application/json'
