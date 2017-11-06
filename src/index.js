@@ -8,8 +8,7 @@ import Root from './components/Root';
 import './styles/styles.scss';
 /**
   * We are doing component lazy load on route in App.js file. 
-  * Therefore, we import component SCSS file below in first file of the application.
-  * If we did not lazy load the component, the import below would not be necessary.
+  * Therefore, we import component SCSS file below in first file of the application.np
 */
 require('./favicon.ico'); // Tell webpack to load favicon.ico
 import '../node_modules/@ctech/clinicaldocs-component/es/ClinicalDocs.scss';
