@@ -12,7 +12,6 @@ const cookies = new Cookies();
 export function setPatientData() {
   const parsed = queryString.parse(location.search);
   const patientIdFromUrl = parsed.patientId;
-
   const ssoPatId = cookies.get('patientId');
   const ssoAT = cookies.get('at');
 
